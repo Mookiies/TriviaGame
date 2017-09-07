@@ -1,0 +1,138 @@
+Summary:
+Overall the project came togeth almost exactly as planned. I used https://opentdb.com/ as
+a database to pull questions from. And I build a framework around querying it to get
+the questions I wanted. My program currently supports all question offered by the API.
+For the most part I stuck to my original plan. The first diagram is the one I proposed 
+in the project brief, and the second diagram is how my final came out. (the lines just
+show which classes use what). I put the diagrams at the bottom of the file because of
+how big they are.
+
+How to play:
+-press run and click on button for the correct answer
+-press r to reset the current question set
+-press n to load a new question set
+
+How to configure:
+You can get a more specific set of questions by using the URLBuilder class.
+The URLBuilder to change the actual set of questions can be found on line 17.
+I have commented out examples of how to use it.
+
+Incomplete:
+The text displayer class was never really finished, I intented it to use create
+a theme for creating text and then use it for the various diffrent text styles I
+wanted. I never fully flushed it out because I didn't really need it, and I
+wanted to focus far more on the trivia and networking aspects of my project.
+
+Biggest trouble area:
+The hardest part of this project was pulling data from the server and handling it
+properly. It was primarily difficult simply due to how many little things to keep
+track of there were. The times when it was the most challenging was when
+a url was invalid and the server returned no actual results and formatting the text
+that came with from the server. By far the most frusterating thing was getting
+apache commons to import, but I finally got it to work. However it isn't a perfect
+solution. There are still some really obscure characters that aren't caught by
+StringEscapeUtils.unescapeHtml4. I never attemped to fix this because it would
+have been really tedious, and would barely improve the quality of my project.
+
+Best feature:
+I think that best part of this project is also the part that gave me the
+most trouble, pulling questions from a database. Because of this if feels like 
+an actual trivia game with replay value. The customization that 
+came along with using the server is also nice, because it can be fun to try out
+all the diffrent categories and see how your talents compare. 
+
+I think that my handling of quering the database is
+an elegant part of my project. The way NetworkUtils and TriviaGame
+interact allows my project to work offline and handle any other errors
+that result from pulling from the database. It took me a while to
+create the setup to do this, but I am happy with the result.
+
+
+
+
+
+
+
+
+
+Diagram from brief:
+                                                                                  +----------------------------------------------------------------------+
+                                                                                  |                                                                      |
+                                                                                  |                                                                      |
+                                                                                  |                                                                      |
+                                                                                  |                                                                      |
+                            +---------------------------------------+             |                       +----------------------+                       |
+                            |                                       |             |                       |                      |                       |
++-------------------+       | Network Handlers                      |             |                       |     IQuestion        |                       |
+|                   +-------+                                       |             |                       |                      |                       |
+|        Main       |       +------+--------------------------------+             |                       +----------------------+                       |
+|                   |              |                                              |                       |                      |                       |
++-----------------+-+              |                                              |                       | Display              |                       |
+                  |                |                                              |                       | Answer Selection     |                       |
+                  |                |                                              |                       |                      |                       |
+                  |                |                                              |                       |                      |                       |
+         +--------v----------------+-----------+                                  |                       +-----------+----------+                       |
+         |                                     |                                  |                                   |                                  |
+         |        Trivia Runner                |                                  |                                   |                                  |
+         |                                     |                                  |                       +-----------+-----------+                      |
+         +-------------------------------------+                                  |                       |                       |                      |
+         |                                     |                                  |                       |  Question             |                      |
+         |  - Score                            |                                  |                       |                       |                      |
+         |  - Questions+------------------------------------+                     |                       |                       |                      |
+         |  - Resets                           |            |                     |                       +-----------------------+                      |
+         +-------------------------------------+            |                     |                       |                       |                      |
+                                                            |                     |                       | Constructs            |                      |
+                                                            |                     |                       | Formats               |                      |
+                                                            |                     |                       |                       |                      |
+                                                            |                     |                       |                       |                      |
+                                                            |                     |                       +-----------------------+                      |
+                                                            |                     |                                    |                                 |
+                                                            |                     |                     +--------------+-------------+                   |
+                                                            |                     |                     |                            |                   |
+                                             +--------------+---------------+     |           +---------+-----------+    +-----------+---------+         |
+                                             |                              |     |           |                     |    |                     |         |
+                                             | Question Factory             +-----+           | True False Quesiton |    | Multiple Choice     |         |
+                                             |                              |     |           |                     |    |                     |         |
+                                             +------------------------------+     |           +-----------------+---+    +----+----------------+         |
+                                             |                              |     |                             |             |                          |
+                                             | Creates Correct Question     |     |                             |             |                          |
+                                             |                              |     +----------------------------------------------------------------------+
+                                             +------------------------------+                                   |             |
+                                                                                                                |             |
+                                                                                                            +---v-------------v------------+
+                                                                                                            |                              |
+                                                                                                            |   Button                     |
+                                                                                                            |                              |
+                                                                                                            +------------------------------+
+
+==========================================================================================================================================================
+
+Diagram for final
+                                                                       +-------------------------------------------+
+                                                                       |                                           |
+                                                                       |                                           |
+                                                                       |        +------------------------+         |
++----------------------+      +-----------------------------+          |        |                        |         |
+|                      |      |                             |          |        |     IQuestion          |         |
+|    Network Utils     |      | URLBuilder                  |          |        |                        |         |
+|                      |      |                             |          |        +------------------+-----+         |
++-----------------+----+      +----------------^------------+          |                           |               |
+                  |                            |                       |          +----------------v----+          |
+                  |                            |                       |          |                     |          |
+                  |               +------------+------------+      +---------------+  Question          |          |
+                  |               |                         |      |   |          |                     |          |
+                  |               |                         |      |   |          +------+---------+----+          |
+                  +---------------+   TriviaGame            |      |   |                 |         |               |
+                                  |                         |      |   | +---------------v-+   +---v----------+    |
+                                  |                         |      |   | |                 |   |              |    |
+                                  +-------------------------+      |   | |  MCQuestion     |   | TFQuestion   |    |
+                                  |                                |   | |                 |   |              |    |
+                                  | --------------------------+    |   | +-----------------+   +--------------+    |
+                                  | |                         |    |   |                                           |
+                                  +-->  Question Factory      |    |   +-------------------------------------------+
+                                    |                        +-----+
+                                    |                         |                    +--------------------+
+                                    +-------------------------+                    |                    |
+                                                                                   |       Button       |
+                                                                                   |                    |
+                                                                                   +--------------------+

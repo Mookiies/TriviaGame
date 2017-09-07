@@ -1,0 +1,85 @@
+{
+  "response_code": 0,
+  "results": [
+    {
+      "difficulty": "easy",
+      "question": "In the &quot;Shrek&quot; film franchise, Donkey is played by Eddie Murphy.",
+      "correct_answer": "True",
+      "incorrect_answers": ["False"],
+      "category": "Entertainment: Cartoon & Animations",
+      "type": "boolean"
+    },
+    {
+      "difficulty": "easy",
+      "question": "The music group Daft Punk got their name from a negative review they recieved.",
+      "correct_answer": "True",
+      "incorrect_answers": ["False"],
+      "category": "Entertainment: Music",
+      "type": "boolean"
+    },
+    {
+      "difficulty": "easy",
+      "question": "In Norse mythology, Thor once dressed as a woman.",
+      "correct_answer": "True",
+      "incorrect_answers": ["False"],
+      "category": "Mythology",
+      "type": "boolean"
+    },
+    {
+      "difficulty": "easy",
+      "question": "Leonardo DiCaprio won an Oscar for Best Actor in 2004&#039;s &quot;The Aviator&quot;.",
+      "correct_answer": "False",
+      "incorrect_answers": ["True"],
+      "category": "Entertainment: Film",
+      "type": "boolean"
+    },
+    {
+      "difficulty": "easy",
+      "question": "&quot;Undertale&quot; is an RPG created by Toby Fox and released in 2015.",
+      "correct_answer": "True",
+      "incorrect_answers": ["False"],
+      "category": "Entertainment: Video Games",
+      "type": "boolean"
+    },
+    {
+      "difficulty": "easy",
+      "question": "In &quot;Sonic Adventure&quot;, you are able to transform into Super Sonic at will after completing the main story.",
+      "correct_answer": "False",
+      "incorrect_answers": ["True"],
+      "category": "Entertainment: Video Games",
+      "type": "boolean"
+    },
+    {
+      "difficulty": "easy",
+      "question": "The Sun rises from the North.",
+      "correct_answer": "False",
+      "incorrect_answers": ["True"],
+      "category": "General Knowledge",
+      "type": "boolean"
+    },
+    {
+      "difficulty": "easy",
+      "question": "Toronto is the capital city of the North American country of Canada.",
+      "correct_answer": "False",
+      "incorrect_answers": ["True"],
+      "category": "Geography",
+      "type": "boolean"
+    },
+    {
+      "difficulty": "easy",
+      "question": "&quot;Elementary, my dear Watson&quot; is a phrase that is never truly said within the Conan Doyle books of Sherlock Holmes.",
+      "correct_answer": "True",
+      "incorrect_answers": ["False"],
+      "category": "Entertainment: Books",
+      "type": "boolean"
+    },
+    {
+      "difficulty": "easy",
+      "question": "Ana was added as a new hero for the game Overwatch on July 19th, 2016.",
+      "correct_answer": "True",
+      "incorrect_answers": ["False"],
+      "category": "Entertainment: Video Games",
+      "type": "boolean"
+    }
+  ]
+}

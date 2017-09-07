@@ -1,0 +1,85 @@
+{
+  "response_code": 0,
+  "results": [
+    {
+      "difficulty": "medium",
+      "question": "Ashley Frangipane performs under the stage name Halsey.",
+      "correct_answer": "True",
+      "incorrect_answers": ["False"],
+      "category": "Entertainment: Music",
+      "type": "boolean"
+    },
+    {
+      "difficulty": "medium",
+      "question": "Metal Gear Solid V: The Phantom Pain runs on the Fox Engine.",
+      "correct_answer": "True",
+      "incorrect_answers": ["False"],
+      "category": "Entertainment: Video Games",
+      "type": "boolean"
+    },
+    {
+      "difficulty": "easy",
+      "question": "The anime &quot;Lucky Star&quot; follows the story of one girl who is unaware she is God.",
+      "correct_answer": "False",
+      "incorrect_answers": ["True"],
+      "category": "Entertainment: Japanese Anime & Manga",
+      "type": "boolean"
+    },
+    {
+      "difficulty": "medium",
+      "question": "Tony Hawk&#039;s Pro Skater was released in 1999.",
+      "correct_answer": "True",
+      "incorrect_answers": ["False"],
+      "category": "Entertainment: Video Games",
+      "type": "boolean"
+    },
+    {
+      "difficulty": "easy",
+      "question": "Shaquille O&#039;Neal appeared in the 1997 film &quot;Space Jam&quot;.",
+      "correct_answer": "False",
+      "incorrect_answers": ["True"],
+      "category": "Entertainment: Film",
+      "type": "boolean"
+    },
+    {
+      "difficulty": "easy",
+      "question": "In 2010, Twitter and the United States Library of Congress partnered together to archive every tweet by American citizens.",
+      "correct_answer": "True",
+      "incorrect_answers": ["False"],
+      "category": "General Knowledge",
+      "type": "boolean"
+    },
+    {
+      "difficulty": "easy",
+      "question": "No Game No Life first aired in 2014.",
+      "correct_answer": "True",
+      "incorrect_answers": ["False"],
+      "category": "Entertainment: Japanese Anime & Manga",
+      "type": "boolean"
+    },
+    {
+      "difficulty": "easy",
+      "question": "The PlayStation was originally a joint project between Sega and Sony that was a Sega Genesis with a disc drive.",
+      "correct_answer": "False",
+      "incorrect_answers": ["True"],
+      "category": "Entertainment: Video Games",
+      "type": "boolean"
+    },
+    {
+      "difficulty": "medium",
+      "question": "The Western Electric Model 500 telephone uses tone dialing to dial phone numbers.",
+      "correct_answer": "False",
+      "incorrect_answers": ["True"],
+      "category": "Science: Gadgets",
+      "type": "boolean"
+    },
+    {
+      "difficulty": "easy",
+      "question": "In Heroes of the Storm, the Cursed Hollow map gimmick requires players to kill the undead to curse the enemy team.",
+      "correct_answer": "False",
+      "incorrect_answers": ["True"],
+      "category": "Entertainment: Video Games",
+      "type": "boolean"
+    }
+  ]
+}

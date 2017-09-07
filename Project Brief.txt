@@ -1,0 +1,73 @@
+TRIVIA PROJECT
+-Malcolm Scruggs
+
+
+Idea:
+Create the trivia game by using an online database of trivia questions. The database 
+that I plan to use is: https://opentdb.com/api_config.php
+
+How this will meet the requirements:
+- 10 or more questions: will dynamically pull from API which supports up to 50 questions per request
+- Loaded from an external file: will be loaded from an external website. 
+	(Could be saved to a file as backup)
+- Visual / animation: will have a generic correct and incorrect response
+- Inheritance and 2 subclasses: see proposed class structure
+- Restart: options to (1) start with new question set (2) reset current question set
+
+
+PseudoCode:
+                                                                                  +----------------------------------------------------------------------+
+                                                                                  |                                                                      |
+                                                                                  |                                                                      |
+                                                                                  |                                                                      |
+                                                                                  |                                                                      |
+                            +---------------------------------------+             |                       +----------------------+                       |
+                            |                                       |             |                       |                      |                       |
++-------------------+       | Network Handlers                      |             |                       |     IQuestion        |                       |
+|                   +-------+                                       |             |                       |                      |                       |
+|        Main       |       +------+--------------------------------+             |                       +----------------------+                       |
+|                   |              |                                              |                       |                      |                       |
++-----------------+-+              |                                              |                       | Display              |                       |
+                  |                |                                              |                       | Answer Selection     |                       |
+                  |                |                                              |                       |                      |                       |
+                  |                |                                              |                       |                      |                       |
+         +--------v----------------+-----------+                                  |                       +-----------+----------+                       |
+         |                                     |                                  |                                   |                                  |
+         |        Trivia Runner                |                                  |                                   |                                  |
+         |                                     |                                  |                       +-----------+-----------+                      |
+         +-------------------------------------+                                  |                       |                       |                      |
+         |                                     |                                  |                       |  Question             |                      |
+         |  - Score                            |                                  |                       |                       |                      |
+         |  - Questions+------------------------------------+                     |                       |                       |                      |
+         |  - Resets                           |            |                     |                       +-----------------------+                      |
+         +-------------------------------------+            |                     |                       |                       |                      |
+                                                            |                     |                       | Constructs            |                      |
+                                                            |                     |                       | Formats               |                      |
+                                                            |                     |                       |                       |                      |
+                                                            |                     |                       |                       |                      |
+                                                            |                     |                       +-----------------------+                      |
+                                                            |                     |                                    |                                 |
+                                                            |                     |                     +--------------+-------------+                   |
+                                                            |                     |                     |                            |                   |
+                                             +--------------+---------------+     |           +---------+-----------+    +-----------+---------+         |
+                                             |                              |     |           |                     |    |                     |         |
+                                             | Question Factory             +-----+           | True False Quesiton |    | Multiple Choice     |         |
+                                             |                              |     |           |                     |    |                     |         |
+                                             +------------------------------+     |           +-----------------+---+    +----+----------------+         |
+                                             |                              |     |                             |             |                          |
+                                             | Creates Correct Question     |     |                             |             |                          |
+                                             |                              |     +----------------------------------------------------------------------+
+                                             +------------------------------+                                   |             |
+                                                                                                                |             |
+                                                                                                            +---v-------------v------------+
+                                                                                                            |                              |
+                                                                                                            |   Button                     |
+                                                                                                            |                              |
+                                                                                                            +------------------------------+
+
+
+Plan: 
+Trivia runner: manage score, current question, fetching and creating questions
+Question: store each question is a question class that handles displaying and selection of answer
+Button: class to creat buttons for answers and potentially reset buttons or other UI elements
+URL builder: (low priority) class to customize queries to database and handle failed calls
